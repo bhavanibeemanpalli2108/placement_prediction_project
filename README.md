@@ -1,19 +1,38 @@
 # Student Placement Prediction System
 
-## Team Structure
+A complete student placement prediction project built with XGBoost, Streamlit, FastAPI, and SQLite.
 
-### Frontend Team
-Responsible for UI/UX and dashboard development.
+## Structure
 
-### Backend Team
-Responsible for APIs, authentication, and ML integration.
+- `frontend/` — Streamlit application for interactive prediction and model reporting.
+- `backend/` — XGBoost training, inference pipeline, FastAPI backend, and Supabase integration.
+- `database/` — SQLite schema, connection utilities, and dataset loader.
+- `student_placement_prediction_dataset_2026 (1).csv` — source dataset for training and evaluation.
 
-### Database Team
-Responsible for Supabase schema, migrations, and data management.
+## Quick start
 
-## Project Modules
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- Frontend
-- Backend
-- Database
-- Documentation
+2. Train the model:
+   ```bash
+   python backend/train_model.py
+   ```
+
+3. Run the Streamlit frontend:
+   ```bash
+   streamlit run frontend/app.py
+   ```
+
+4. Run the backend API:
+   ```bash
+   uvicorn backend.app:app --reload
+   ```
+
+## Notes
+
+- The backend includes a FastAPI prediction endpoint at `/predict`.
+- The application supports local SQLite storage and optional Supabase prediction logging.
+- The dataset loader in `database/data_loader.py` can insert CSV rows into SQLite.

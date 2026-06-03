@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.joblib
+*.pkl
+.vscode/
+.DS_Store
+.env
