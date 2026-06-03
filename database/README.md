@@ -41,7 +41,7 @@ It supports SQLite for local development and can be extended to work with Supaba
    pip install -r requirements.txt
    ```
 
-2. Initialize the SQLite database:
+2. Initialize local SQLite database:
    ```bash
    python -c "from database.connection import DatabaseConnection; db = DatabaseConnection(); db.initialize_database()"
    ```
@@ -50,6 +50,22 @@ It supports SQLite for local development and can be extended to work with Supaba
    ```bash
    python database/data_loader.py
    ```
+
+4. Initialize Supabase tables (optional):
+   - Set your Supabase DB URL in environment variables:
+     ```bash
+     export SUPABASE_DB_URL="postgresql://user:password@host:port/database"
+     ```
+     or on Windows PowerShell:
+     ```powershell
+     $env:SUPABASE_DB_URL = 'postgresql://user:password@host:port/database'
+     ```
+   - Run:
+     ```bash
+     python database/supabase_init.py
+     ```
+
+5. Alternatively, use the Supabase SQL editor and paste the SQL in `database/supabase_schema.sql`.
 
 ## Usage Example
 
